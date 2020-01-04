@@ -13,22 +13,18 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	random_device r;
+	const size_t wl_size = sizeof(wordlist)/sizeof(*wordlist);
 	
 	long len = strtol(argv[1], NULL, 10);
 	if (len < 0) {
 		cerr << "Some people don't think it be like it is but it do" << endl;
 		return 2;
 	}
+	
 	string s;
 	for (int i = 0; i < len; i++) {
-		int idx = 0;
-		idx += (10000 * (r() % 6 + 1));
-		idx += (1000 * (r() % 6 + 1));
-		idx += (100 * (r() % 6 + 1));
-		idx += (10 * (r() % 6 + 1));
-		idx += r() % 6 + 1;
-		s += wordlist(idx);
-		if (i + 1 < len) s+= ' ';
+		s += wordlist[r() % wl_size];
+		if (i + 1 < len) s += ' ';
 	}
 	cout << s << endl;
 	return 0;
