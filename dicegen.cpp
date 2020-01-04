@@ -7,9 +7,9 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
-		cerr << "\033[1mUsage:\033[0m " << argv[0]
-			<< " \033[4mnumber\033[0m\n\tGenerates a diceware password "
-			"consisting of \033[4mnumber\033[0m words\n";
+		cerr << "\033[1mUsage:\033[0m " << argv[0] << " \033[4mnumber\033[0m\n"
+			"\tGenerates a diceware password consisting of "
+			"\033[4mnumber\033[0m words\n";
 		return 1;
 	}
 	random_device r;
