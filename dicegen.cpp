@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 		idx += (10 * (r() % 6 + 1));
 		idx += r() % 6 + 1;
 		s += wordlist(idx);
-		s += ' ';
+		if (i + 1 < len) s+= ' ';
 	}
 	cout << s << endl;
 	return 0;
